@@ -4,7 +4,7 @@ import {
     IconButton, 
     Dialog,
     TextField} from 'material-ui';
-import {Search, Close} from '@material-ui/icons';
+// import {Search, Close} from '@material-ui/icons';
 
 
 

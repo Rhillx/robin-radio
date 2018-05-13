@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Drawer, IconButton} from 'material-ui';
-import {Close, Menu} from '@material-ui/icons';
+// import {Close, Menu} from '@material-ui/icons';
 
 
 
