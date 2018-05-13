@@ -1,0 +1,63 @@
+body{
+  background-color: #ce93d8;
+
+}
+#root{
+  margin-bottom: 25px;
+}
+
+.footer{
+  background-color: #ab47bc;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio{
+  display: none;
+}
+
+/* Header Styles */
+.headerContainer{
+  background-color: #ab47bc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: relative;
+  color: floralwhite;
+}
+.searchCloseBtn{
+  display: flex;
+  justify-content: flex-end;
+}
+/* End Header Styles */
+
+.mediaBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 200px; */
+}
+.img{
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.art{
+  height: 250px;
+  width: 300px;
+}
+.songInfoContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
