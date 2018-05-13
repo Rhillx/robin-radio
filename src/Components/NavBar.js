@@ -29,12 +29,12 @@ _toggleDrawer = () =>{
     return(
       <MuiThemeProvider>
       <IconButton onClick={this._toggleDrawer} color="white">
-        <Menu/>
+        // this is for menu button icon
       </IconButton>
       <Drawer open={this.state.drawerOpen}>
           
       <IconButton variant="fab" color="primary" aria-label="add" onClick={this._toggleDrawer}>
-        <Close />
+      //  this is for close button icon
       </IconButton>
       </Drawer>
       </MuiThemeProvider>

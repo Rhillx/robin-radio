@@ -25,12 +25,12 @@ _toggleModal = () =>{
         return(
             <MuiThemeProvider>
             <IconButton onClick={this._toggleModal}>
-                <Search/>
+                // this is for search button icon
             </IconButton>
             <Dialog open={this.state.modalIsOpen}>
                 <div className="searchCloseBtn">
                     <IconButton variant="fab" color="primary" aria-label="add" onClick={this._toggleModal}>
-                        <Close />
+                        // this is for close btn icon
                     </IconButton>
                 </div>
                     <TextField
