@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Drawer, IconButton} from 'material-ui';
+import Menu from 'material-ui/svg-icons/navigation/menu';
+import Close from 'material-ui/svg-icons/navigation/close';
+
 // import {Close, Menu} from '@material-ui/icons';
 
 
@@ -29,12 +32,12 @@ _toggleDrawer = () =>{
     return(
       <MuiThemeProvider>
       <IconButton onClick={this._toggleDrawer} color="white">
-        // this is for menu button icon
+        <Menu/>
       </IconButton>
       <Drawer open={this.state.drawerOpen}>
           
       <IconButton variant="fab" color="primary" aria-label="add" onClick={this._toggleDrawer}>
-      //  this is for close button icon
+      <Close/>
       </IconButton>
       </Drawer>
       </MuiThemeProvider>

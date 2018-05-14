@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import IconButton from 'material-ui/IconButton';
+import Paper from 'material-ui/Paper';
+import PlaylistAdd from 'material-ui/svg-icons/av/playlist-add';
+
 import PlayCircleOutline from 'material-ui/svg-icons/av/play-circle-outline';
 import PauseCircleOutline from 'material-ui/svg-icons/av/pause-circle-outline'
-import FastForward from 'material-ui/svg-icons/av/fast-forward';
-import FastRewind from 'material-ui/svg-icons/av/fast-rewind';
+import SkipNext from 'material-ui/svg-icons/av/skip-next';
+import SkipPrevious from 'material-ui/svg-icons/av/skip-previous';
 import {music, artwork} from '../Reducers';
 import {getMusic, getArtwork} from '../Actions/songs_actions';
 import {connect} from 'react-redux';
@@ -71,7 +74,7 @@ class Footer extends Component{
             title: currTitle,
             artwork: currArt
             },
-            isPlayingSong: true
+            isPlayingSong: false
         })
         
         }
@@ -178,13 +181,14 @@ renderPlayButton(){
         return(
             <div>
             <SongInfo song={this.state}/>
-            <div className="footer">
+            <Paper elevation={10}>
+            <div className="footerContainer">
                     <div className='mediaBtn'>
                 <IconButton
                     iconStyle={styles.largeIcon}
                     onClick = {()=>this.prevSong()}
                 >
-                    <FastRewind color='white' hoverColor='grey'/>
+                    <SkipPrevious color='white' hoverColor='grey'/>
                 </IconButton>
                 
                     {this.renderPlayButton()}
@@ -192,11 +196,12 @@ renderPlayButton(){
                     iconStyle={styles.largeIcon}
                     onClick={()=>this.nextSong()}
                 >
-                    <FastForward color='white' hoverColor='grey'/>
+                    <SkipNext color='white' hoverColor='grey'/>
                 </IconButton>
                 <audio id="audio" className='audio' controls preload='auto'></audio>
                 </div>
             </div>
+            </Paper>
             </div>
             
         )

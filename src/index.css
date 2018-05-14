@@ -1,66 +1,69 @@
 body{
   background-color: #ce93d8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  
 }
-#root{
- 
-}
-
-.footer{
-  background-color: #ab47bc;
-  height: 60px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.audio{
-  display: none;
-}
-
-/* Header Styles */
 .headerContainer{
-  background-color: #ab47bc;
+ background-color: #ab47bc;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+      color: floralwhite;
+      margin-bottom: 30px;
+    }
+    .img{
+      height: 300px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .art{
+      padding: 15px;
+      height: 300px;
+      width: 300px;
+    }
+    .songInfoContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin: 15px auto;
+    } 
+    .footerContainer{
+      background-color: #ab47bc;
+      height: 80px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+        .audio{
+          display: none;
+        }
+    /*
+#root{
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  position: relative;
-  color: floralwhite;
 }
+
+
+
+
 .searchCloseBtn{
   display: flex;
   justify-content: flex-end;
 }
-/* End Header Styles */
+
 
 .mediaBtn{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 200px; */
-}
-.img{
-  height: 300px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /* align-content: center; */
-  align-items: center;
-}
 
-.art{
-  height: 250px;
-  width: 300px;
 }
-.songInfoContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+*/

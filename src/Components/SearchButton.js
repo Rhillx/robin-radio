@@ -4,6 +4,8 @@ import {
     IconButton, 
     Dialog,
     TextField} from 'material-ui';
+import Search from 'material-ui/svg-icons/action/search';
+import Close from 'material-ui/svg-icons/navigation/close';
 // import {Search, Close} from '@material-ui/icons';
 
 
@@ -25,12 +27,12 @@ _toggleModal = () =>{
         return(
             <MuiThemeProvider>
             <IconButton onClick={this._toggleModal}>
-                // this is for search button icon
+                <Search/>
             </IconButton>
             <Dialog open={this.state.modalIsOpen}>
                 <div className="searchCloseBtn">
                     <IconButton variant="fab" color="primary" aria-label="add" onClick={this._toggleModal}>
-                        // this is for close btn icon
+                        <Close/>
                     </IconButton>
                 </div>
                     <TextField
