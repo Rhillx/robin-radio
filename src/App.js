@@ -6,12 +6,15 @@ import {applyMiddleware, createStore} from 'redux';
 import promise from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import LoadingScreen from 'react-loading-screen';
 
 
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import SongInfo from './Components/SongInfo';
+
+import logo from './Images/logo_white_background.jpg';
 
 
 
@@ -25,7 +28,17 @@ import SongInfo from './Components/SongInfo';
 
 
 class App extends Component {
-  
+  state ={
+    loading: null
+  }
+
+  componentWillMount(){
+    this.setState({loading: true})
+  }
+
+  componentDidMount(){
+    this.setState({loading: false})
+  }
 
 
   render() {
@@ -35,7 +48,10 @@ class App extends Component {
 
 
     return (
-      
+      <LoadingScreen
+        loading ={this.state.loading}
+        logoSrc ={logo}
+        >
       <Provider store={store}>
         <MuiThemeProvider>
           <Header headerTitle='Robin Radio'/>
@@ -44,6 +60,7 @@ class App extends Component {
           <Footer/>                                 
         </MuiThemeProvider>
       </Provider>
+      </LoadingScreen>
     );
   }
 }

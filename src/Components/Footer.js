@@ -181,6 +181,7 @@ renderPlayButton(){
     render(){
        
         return(
+            
             <div>
             <SongInfo song={this.state}/>
             <Paper elevation={10}>
@@ -201,7 +202,7 @@ renderPlayButton(){
                 >
                     <SkipNext color='white' hoverColor='grey'/>
                 </IconButton>
-                <audio id="audio" className='audio' controls autoplay></audio>
+                <audio id="audio" className='audio' controls></audio>
                 </div>
             </div>
             </Paper>
