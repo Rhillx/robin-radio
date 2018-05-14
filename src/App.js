@@ -29,7 +29,7 @@ import logo from './Images/logo_white_background.jpg';
 
 class App extends Component {
   state ={
-    loading: null
+    loading: true
   }
 
   componentWillMount(){
@@ -37,9 +37,13 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.setState({loading: false})
-  }
+    setTimeout(()=>{
 
+    this.setState({loading: false})
+
+    },4000)
+  }
+  
 
   render() {
 
