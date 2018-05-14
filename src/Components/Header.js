@@ -10,7 +10,7 @@ import Paper from 'material-ui/Paper';
 
 const Header = props => {
     return(
-        <Paper elevation={10}>
+        <Paper zDepth={3} style={{marginBottom: 40}}>
         <div className="headerContainer">
         <div className="navButton">
             <Navi/>

@@ -11,6 +11,8 @@ import {music, artwork} from '../Reducers';
 import {getMusic, getArtwork} from '../Actions/songs_actions';
 import {connect} from 'react-redux';
 import SongInfo from './SongInfo';
+
+import {Line } from 'rc-progress';
 // import $ from 'jquery';
 
 
@@ -182,6 +184,7 @@ renderPlayButton(){
             <div>
             <SongInfo song={this.state}/>
             <Paper elevation={10}>
+            <Line percent="10" strokeWidth="1" strokeColor="#ab47bc" />
             <div className="footerContainer">
                     <div className='mediaBtn'>
                 <IconButton
@@ -198,7 +201,7 @@ renderPlayButton(){
                 >
                     <SkipNext color='white' hoverColor='grey'/>
                 </IconButton>
-                <audio id="audio" className='audio' controls preload='auto'></audio>
+                <audio id="audio" className='audio' controls autoplay></audio>
                 </div>
             </div>
             </Paper>
