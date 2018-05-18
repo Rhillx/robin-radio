@@ -28,8 +28,11 @@ class Footer extends Component{
         artist: '',
         album: '',
         title: '',
-        artwork: ''
-    }
+        artwork: '',
+    },
+    perc: '',
+    duration: null,
+    currentTime: null,
   }
 
   componentWillMount(){
@@ -99,11 +102,13 @@ pauseSong =() =>{
     const x = document.getElementById('audio')
 
      x.pause();
-    this.setState({isPlayingSong: false})
+    this.setState({isPlayingSong: false, perc: 0})
 }
 // Skip song function
 nextSong = () =>{
 const x = document.getElementById('audio')
+
+    this.setState({perc: 0})
 
     const art = this.state.albumArt
     const track = this.state.songs
@@ -135,21 +140,77 @@ const x = document.getElementById('audio')
             })
         }
     })
+     x.addEventListener('loadedmetadata', ()=>{
+        const minutes = Math.floor(x.duration/60);
+        const seconds = Math.round(x.duration - minutes *60) ;
+        const songDuration = minutes+":"+seconds
+
+
+        x.setAttribute('data-time', songDuration)
+    })
+
+     x.addEventListener('timeupdate', ()=>{
+        const currTime = Math.floor(x.currentTime)
+        const duration = Math.floor(x.duration)
+        const perc = (currTime/duration)*100
+
+        this.setState({perc: perc})
+
+    })
+
+
+
+
      x.play();
     this.setState({isPlayingSong: true})
+
+   
 }
 // End skip song fucntion
+componentDidMount(){
+
+    setTimeout(()=>{  
+
+    const x = document.getElementById('audio')
+
+    x.addEventListener('loadedmetadata', ()=>{
+        const minutes = Math.floor(x.duration/60);
+        const seconds = Math.round(x.duration - minutes *60) ;
+        const songDuration = minutes+":"+seconds
 
 
+        x.setAttribute('data-time', songDuration)
+        this.setState({duration: songDuration})
+    })
+
+    x.addEventListener('timeupdate', ()=>{
+        const currTime = Math.floor(x.currentTime)
+        const duration = Math.floor(x.duration)
+        const timeMinute = Math.floor(currTime/60)
+        const timeSec= Math.round(currTime + timeMinute) 
+        const perc = (currTime/duration)*100
+
+        console.log(timeMinute, timeSec)
+
+        this.setState({perc: perc})
+
+    })
+
+
+    }, 3000)
+}
+
+componentDidUpdate(){
+    if(this.state.perc === 100){
+        this.nextSong();
+    }
+}
 // Previous song function
 prevSong = () =>{
     const x = document.getElementById('audio')
 
-    console.log('====================================');
-    
-     console.log(this.state);
-      
-    console.log('====================================');
+
+
 }
 
 
@@ -179,13 +240,17 @@ renderPlayButton(){
 
 
     render(){
-       
+        console.log('====================================');
+        console.log(this.state);
+        console.log('====================================');
         return(
             
             <div>
             <SongInfo song={this.state}/>
-            <Paper elevation={10}>
-            <Line percent="10" strokeWidth="1" strokeColor="#ab47bc" />
+            <Paper zdepth={5}>
+    
+            <Line percent={this.state.perc} strokeWidth="0.5" strokeColor="#ab47bc" />
+            
             <div className="footerContainer">
                     <div className='mediaBtn'>
                 <IconButton
@@ -203,6 +268,7 @@ renderPlayButton(){
                     <SkipNext color='white' hoverColor='grey'/>
                 </IconButton>
                 <audio id="audio" className='audio' controls></audio>
+                <span className="duration">{this.state.duration}</span>
                 </div>
             </div>
             </Paper>

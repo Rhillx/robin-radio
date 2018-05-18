@@ -8,7 +8,7 @@ body{
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      height: 50px;
+      height: auto;
       color: floralwhite;
       margin-bottom: 30px;
     }
@@ -35,22 +35,18 @@ body{
     } 
     .footerContainer{
       background-color: #ab47bc;
-      height: 80px;
+      height: auto;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+     padding: 10px;
     }
         .audio{
           display: none;
         }
     
-#root{
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-}
+
 
 
 
@@ -67,4 +63,5 @@ body{
   align-items: center;
 
 }
+
 

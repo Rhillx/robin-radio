@@ -14,7 +14,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import SongInfo from './Components/SongInfo';
 
-import logo from './Images/logo_white_background.jpg';
+import logo from './Images/logo_size.jpg';
 
 
 
