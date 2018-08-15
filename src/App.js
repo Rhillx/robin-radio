@@ -13,6 +13,7 @@ import LoadingScreen from 'react-loading-screen';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import SongInfo from './Components/SongInfo';
+import AlbumDetail from './Components/AlbumDetails';
 
 import logo from './Images/logo_size.jpg';
 
@@ -61,7 +62,7 @@ class App extends Component {
           <Header headerTitle='Robin Radio'/>
          
 
-          <Footer/>                                 
+          <AlbumDetail/>                                 
         </MuiThemeProvider>
       </Provider>
       </LoadingScreen>

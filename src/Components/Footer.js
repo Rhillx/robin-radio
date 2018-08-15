@@ -85,7 +85,7 @@ class Footer extends Component{
         }
     })
 
-}, 3000)
+}, 7000)
     //  End time delay for logic
 }
 
@@ -187,7 +187,7 @@ componentDidMount(){
         const currTime = Math.floor(x.currentTime)
         const duration = Math.floor(x.duration)
         const timeMinute = Math.floor(currTime/60)
-        const timeSec= Math.round(currTime + timeMinute) 
+        const timeSec= Math.round(currTime + timeMinute*60) 
         const perc = (currTime/duration)*100
 
         console.log(timeMinute, timeSec)
