@@ -4,9 +4,15 @@ import Navi from './NavBar';
 import SearchButton from './SearchButton';
 import Paper from 'material-ui/Paper';
 
+import logoTrans from '../Images/white_logo_color_background.jpg';
 
 
 
+const styles ={
+    height: 50,
+    width: 120,
+    color: 'white',
+}
 
 const Header = props => {
     return(
@@ -16,7 +22,7 @@ const Header = props => {
             <Navi/>
         </div>
         <div className="headerText">
-            <h2>{props.headerTitle}</h2>
+            <img src={logoTrans} alt='none' style={styles}/>
         </div>
         <div className="searchButton">
             <SearchButton/>

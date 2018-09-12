@@ -7,19 +7,30 @@ import promise from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import LoadingScreen from 'react-loading-screen';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 
 
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import SongInfo from './Components/SongInfo';
-import AlbumDetail from './Components/AlbumDetails';
+import CurrentPlayingSong from './Components/CurrentPlayingSong';
+import AlbumList from './Components/AlbumList';
+
+import TrackList from './Components/TrackList';
+import Songs from './Components/Songs';
+import TrackPlayer from './Components/TrackPlayer';
+import MediaControl from './Components/MediaControl';
 
 import logo from './Images/logo_size.jpg';
+import logoTrans from './Images/logo_transparent_background.png';
 
 
 
-
+const styles = {
+  height: 20,
+  width: 20,
+}
 
 
 
@@ -59,10 +70,14 @@ class App extends Component {
         >
       <Provider store={store}>
         <MuiThemeProvider>
-          <Header headerTitle='Robin Radio'/>
-         
-
-          <AlbumDetail/>                                 
+        <Router>
+        <div>
+        <Header/>
+          <Route path='/' exact strict component={TrackPlayer}/>
+          <Route path='/albums' component={AlbumList}/>
+          <Route path='/records' component={Songs}/> 
+        </div>
+        </Router>                  
         </MuiThemeProvider>
       </Provider>
       </LoadingScreen>

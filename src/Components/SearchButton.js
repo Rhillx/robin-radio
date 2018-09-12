@@ -8,7 +8,12 @@ import Search from 'material-ui/svg-icons/action/search';
 import Close from 'material-ui/svg-icons/navigation/close';
 // import {Search, Close} from '@material-ui/icons';
 
-
+const styles = {
+    search :{
+        border: '1px solid grey',
+        borderRadius: '10px'
+    }
+}
 
 class SearchButton extends React.Component{
 
@@ -27,9 +32,9 @@ _toggleModal = () =>{
         return(
             <MuiThemeProvider>
             <IconButton onClick={this._toggleModal}>
-                <Search/>
+                <Search color='white'/>
             </IconButton>
-            <Dialog open={this.state.modalIsOpen}>
+            <Dialog style={styles.search} open={this.state.modalIsOpen}>
                 <div className="searchCloseBtn">
                     <IconButton variant="fab" color="primary" aria-label="add" onClick={this._toggleModal}>
                         <Close/>

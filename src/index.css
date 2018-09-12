@@ -1,17 +1,39 @@
-body{
-  background-color: #ce93d8;
+/* 
+main color #ce93d8
+
+*/
+html{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+}
+
+body, html{
+  background-image: linear-gradient(white, #6C30C4, lightgray);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
   
 }
 .headerContainer{
- background-color: #ab47bc;
+ background-color: #6C30C4;
+      position: unset;
+      width: 100%;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      height: auto;
+      min-height: 50px;
       color: floralwhite;
       margin-bottom: 30px;
+      
+      
     }
+
     .img{
       height: 300px;
       width: 100%;
@@ -21,9 +43,13 @@ body{
       margin-bottom: 15px;
     }
     .art{
-      padding: 15px;
+      /* padding: 15px; */
       height: 300px;
       width: 300px;
+      border: 1px solid grey;
+      -webkit-box-shadow: 10px -5px 20px -1px rgba(0, 0, 0, 0.6);
+      -moz-box-shadow: 10px -5px 20px -1px rgba(0, 0, 0, 0.6);
+      box-shadow: 10px -5px 20px -1px rgba(0, 0, 0, 0.6);
     }
     .songInfoContainer{
       display: flex;
@@ -45,9 +71,18 @@ body{
         .audio{
           display: none;
         }
+        span{
+          font-size: 12px;
+          text-align: center;
+          align-self: center;
+          /* padding: 10px; */
+        }
     
 
-
+.searchDialog{
+  border: 1px solid purple;
+  border-radius: 10px;
+}
 
 
 
@@ -57,11 +92,55 @@ body{
 }
 
 
+
 .mediaBtn{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #6C30C4;
+  padding: 5px;
+  height: 50px;
+  border: 1px;
+ box-shadow: 0px -5px 5px 0px rgba(86, 86, 86, 0.4);
+ -webkit-box-shadow: 0px -5px 5px 0px rgba(86, 86, 86, 0.4);
+ -moz-box-shadow: 0px -5px 5px 0px rgba(86, 86, 86, 0.4);
+
+ 
+
+} 
+
+.albumList{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.album{
+  height: 200px;
+  width: 200px;
+ padding: 5px;
 
 }
 
+.song-list{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+}
+.song-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.song-cover{
+  height: 50px;
+  width: 50px;
+}
+.drawer-item{
+  padding: 5px;
+}
 

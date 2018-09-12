@@ -8,7 +8,7 @@ export const GET_ART = 'get_art';
 
 export const getMusic = () => {
     return dispatch =>{
-    db.ref("music/").on('value', music =>{
+    db.ref("music/tracks").on('value', music =>{
         dispatch({
             type: GET_MUSIC,
             payload: music.val()

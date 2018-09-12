@@ -10,7 +10,7 @@ import SkipPrevious from 'material-ui/svg-icons/av/skip-previous';
 import {music, artwork} from '../Reducers';
 import {getMusic, getArtwork} from '../Actions/songs_actions';
 import {connect} from 'react-redux';
-import SongInfo from './SongInfo';
+import CurrentPlayingSong from './CurrentPlayingSong';
 
 import {Line } from 'rc-progress';
 // import $ from 'jquery';
@@ -43,8 +43,8 @@ class Footer extends Component{
    setTimeout(()=>{
      const tracks = this.props.music.tracks;
      const songsArr = Object.values(tracks);
-     const albumArt = this.props.artwork
-     const artArr = Object.values(albumArt)
+     const albumArt = this.props.artwork;
+     const artArr = Object.values(albumArt);
 
     //  setting song state to list of songs
     this.setState({songs: this.state.songs.concat(songsArr)})
@@ -246,7 +246,7 @@ renderPlayButton(){
         return(
             
             <div>
-            <SongInfo song={this.state}/>
+            <CurrentPlayingSong song={this.state}/>
             <Paper zdepth={5}>
     
             <Line percent={this.state.perc} strokeWidth="0.5" strokeColor="#ab47bc" />
